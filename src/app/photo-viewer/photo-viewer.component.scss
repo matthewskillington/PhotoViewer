@@ -3,9 +3,18 @@
   text-align: center;
   padding: 10px;
   background-color: #666;
+  color: #fff;
 
-  div.photo-list-wrapper {
+  .photo-list-wrapper {
     margin: 0px auto;
     width: 80%;
+    .photo-list-item {
+      background-color: #ccc;
+      margin: 10px;
+      .photo-item {
+        max-width: 100%;
+        height: auto;
+      }
+    }
   }
 }

@@ -8,9 +8,12 @@
   >
   </mat-paginator>
   <div class="photo-list-wrapper">
-    <div *ngFor="let photo of photos | slice: lowValue:highValue">
+    <div
+      class="photo-list-item"
+      *ngFor="let photo of photos | slice: lowValue:highValue"
+    >
       <h3>{{ photo.title }}</h3>
-      <img src="{{ photo.url }}" />
+      <img class="photo-item" src="{{ photo.url }}" />
     </div>
   </div>
 </div>

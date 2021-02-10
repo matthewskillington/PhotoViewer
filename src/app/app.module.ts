@@ -7,6 +7,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { PhotoViewerComponent } from './photo-viewer/photo-viewer.component';
 import { PhotoViewerService } from './photo-viewer/photo-viewer.service';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [AppComponent, PhotoViewerComponent],
@@ -15,6 +16,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     HttpClientModule,
     NoopAnimationsModule,
     MatPaginatorModule,
+    MatButtonModule,
   ],
   providers: [PhotoViewerService],
   bootstrap: [AppComponent, PhotoViewerComponent],

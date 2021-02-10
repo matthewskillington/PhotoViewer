@@ -7,6 +7,14 @@
     (page)="pageEvent = getPaginatorData($event)"
   >
   </mat-paginator>
+  <button
+    mat-raised-button
+    color="primary"
+    class="filter-button"
+    (click)="FilterByTitle()"
+  >
+    Filter by title
+  </button>
   <div class="photo-list-wrapper">
     <div
       class="photo-list-item"

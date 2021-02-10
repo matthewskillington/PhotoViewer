@@ -20,7 +20,7 @@ export class PhotoViewerComponent {
   pageEvent: PageEvent = new PageEvent();
   pageIndex: number = 0;
   lowValue: number = 0;
-  highValue: number = 10;
+  highValue: number = this.pageSize;
 
   constructor(private photoService: PhotoViewerService) {}
 

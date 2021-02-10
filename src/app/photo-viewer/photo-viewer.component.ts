@@ -9,12 +9,9 @@ import { PageEvent } from '@angular/material/paginator';
 })
 export class PhotoViewerComponent {
   topMessage: string = 'Welcome to the Photo Viewer!';
-  apiUrl: string = 'http://jsonplaceholder.typicode.com/photos';
-
   photos: Photo[] = [];
 
   //Pagination Properties
-  length = 100;
   pageSize = 10;
   pageSizeOptions: number[] = [5, 10, 25, 100];
   pageEvent: PageEvent = new PageEvent();

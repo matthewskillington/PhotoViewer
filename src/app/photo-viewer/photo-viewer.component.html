@@ -7,9 +7,10 @@
     (page)="pageEvent = getPaginatorData($event)"
   >
   </mat-paginator>
-  <mat-list>
-    <mat-list-item *ngFor="let photo of photos | slice: lowValue:highValue">
+  <div class="photo-list-wrapper">
+    <div *ngFor="let photo of photos | slice: lowValue:highValue">
       <h3>{{ photo.title }}</h3>
-    </mat-list-item>
-  </mat-list>
+      <img src="{{ photo.url }}" />
+    </div>
+  </div>
 </div>

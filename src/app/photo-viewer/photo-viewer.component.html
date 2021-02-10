@@ -1,7 +1,14 @@
 <div class="photo-viewer-wrapper">
   <h1 class="mat-display-1">{{ topMessage }}</h1>
+  <mat-paginator
+    [length]="photos.length"
+    [pageSize]="pageSize"
+    [pageSizeOptions]="pageSizeOptions"
+    (page)="pageEvent = getPaginatorData($event)"
+  >
+  </mat-paginator>
   <mat-list>
-    <mat-list-item *ngFor="let photo of photos">
+    <mat-list-item *ngFor="let photo of photos | slice: lowValue:highValue">
       <h3>{{ photo.title }}</h3>
     </mat-list-item>
   </mat-list>

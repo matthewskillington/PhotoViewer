@@ -1,14 +1,15 @@
-import { HttpClient, HttpHandler } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
-import { PageEvent } from '@angular/material/paginator';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { PhotoViewerComponent } from './photo-viewer.component';
 import { PhotoViewerService } from './photo-viewer.service';
 
 describe('PhotoViewerComponent', () => {
+  const mockPhotoService = jasmine.createSpy('PhotoViewerService');
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [PhotoViewerComponent],
-      providers: [HttpHandler, HttpClient, PhotoViewerService],
+      declarations: [PhotoViewerComponent, MatPaginator],
+      providers: [{ provide: PhotoViewerService, useValue: mockPhotoService }],
     }).compileComponents();
   });
 

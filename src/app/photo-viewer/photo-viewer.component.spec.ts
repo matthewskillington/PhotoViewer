@@ -1,14 +1,21 @@
+import { Component } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
-import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { PageEvent } from '@angular/material/paginator';
 import { PhotoViewerComponent } from './photo-viewer.component';
 import { PhotoViewerService } from './photo-viewer.service';
+
+@Component({
+  selector: 'mat-paginator',
+  template: '<p>Mock pagination component</p>',
+})
+class MockPaginatorComponent {}
 
 describe('PhotoViewerComponent', () => {
   const mockPhotoService = jasmine.createSpy('PhotoViewerService');
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [PhotoViewerComponent, MatPaginator],
+      declarations: [PhotoViewerComponent, MockPaginatorComponent],
       providers: [{ provide: PhotoViewerService, useValue: mockPhotoService }],
     }).compileComponents();
   });
@@ -44,7 +51,7 @@ describe('PhotoViewerComponent', () => {
     expect(app.highValue).toEqual(20);
   });
 
-  it('should show more items when pagination items changed', () => {
+  it('should show more items when pagination option increased', () => {
     //Arrange:
     const fixture = TestBed.createComponent(PhotoViewerComponent);
     const app = fixture.componentInstance;
